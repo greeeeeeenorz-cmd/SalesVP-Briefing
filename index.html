@@ -181,7 +181,7 @@ footer .fl{margin-bottom:.2rem}
 </head>
 <body>
 <nav class="navbar" id="navbar"><div class="ni">
-<div class="nb" style="font-size:1.3rem;font-weight:700">品牌广告三维分析</div>
+<div class="nb" style="font-size:1rem;font-weight:400">品牌广告三维分析</div>
 <ul class="nl">
 <li><a href="#hero">概览</a></li>
 <li><a href="#exec">摘要</a></li>
@@ -218,9 +218,9 @@ footer .fl{margin-bottom:.2rem}
 <div id="reportContent">
 <section class="hero" id="hero">
 <canvas id="star-trail"></canvas>
-<div class="hbg">Sales VP Quarterly Briefing</div>
+<div class="hbg">Sales VP Briefing</div>
 <h1>品牌广告客户<br>三维分析报告</h1>
-<p class="hsub">销售总裁季度简报 &nbsp;|&nbsp; 2026年5月</p>
+<p class="hsub">月度汇报 &nbsp;|&nbsp; 2026年5月</p>
 <div class="kr">
 <div class="kc"><div class="kl">5月活跃客户</div><div class="kv fn"><span class="counter" data-target="26">0</span><span class="u">家</span></div><div class="kd" style="color:#4ecdc4">▲ +30.0% vs 4月(20家)</div><div class="ki">👥</div></div>
 <div class="kc"><div class="kl">5月合同额</div><div class="kv fn">¥<span class="counter" data-target="1382" data-decimals="0">0</span><span class="u">万</span></div><div class="kd" style="color:#4ecdc4">▲ +36.7% vs 4月(¥1,011万)</div><div class="ki">💰</div></div>
@@ -1004,7 +1004,7 @@ function switchMonth(val){
     const theta=Math.random()*Math.PI*2;
     const speed=(0.00008+Math.random()*0.00025)*(Math.random()<0.5?1:-1);
     const arcLen=2.0+Math.random()*3.5;
-    const bright=0.00+Math.random()*0.0;
+    const bright=0.001+Math.random()*0.01;
     stars.push({
       r:r,theta:theta,speed:speed,arcLen:arcLen,
       bright:bright,width:0.4+Math.random()*0.4,phase:Math.random()*Math.PI*2
@@ -1020,7 +1020,7 @@ function switchMonth(val){
       const alpha=s.bright*tw;
       const tailTheta=s.theta-s.arcLen*(s.speed>0?1:-1);
       ctx.save();
-      ctx.shadowBlur=0.0+s.width*0;
+      ctx.shadowBlur=0.01+s.width*0.1;
       ctx.shadowColor='rgba(201,168,76,'+(alpha*0.4)+')';
       ctx.strokeStyle='rgba(255,245,220,'+alpha+')';
       ctx.lineWidth=s.width;
